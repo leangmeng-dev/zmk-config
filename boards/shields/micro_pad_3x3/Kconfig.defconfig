@@ -1,0 +1,7 @@
+if SHIELD_MICRO_PAD_3X3
+
+config ZMK_KEYBOARD_NAME
+    default "MicroPad3x3"
+
+endif
+

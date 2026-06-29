@@ -1,0 +1,47 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        windows_layer {
+            display-name = "Windows";
+            bindings = <
+                &kp F13        &kp F14          &kp F15
+                &kp C_PP       &kp C_MUTE       &kp C_VOL_UP
+                &kp C_VOL_DN   &studio_unlock   &to 1
+            >;
+        };
+
+        macos_layer {
+            display-name = "macOS";
+            bindings = <
+                &kp F16        &kp F17          &kp F18
+                &kp C_PP       &kp C_MUTE       &kp C_VOL_UP
+                &kp C_VOL_DN   &studio_unlock   &to 2
+            >;
+        };
+
+        linux_layer {
+            display-name = "Linux";
+            bindings = <
+                &kp LC(LA(N1)) &kp LC(LA(N2))   &kp LC(LA(N3))
+                &kp C_PP       &kp C_MUTE       &kp C_VOL_UP
+                &kp C_VOL_DN   &studio_unlock   &to 3
+            >;
+        };
+
+        system_layer {
+            display-name = "System";
+            bindings = <
+                &bt BT_SEL 0   &bt BT_SEL 1     &bt BT_SEL 2
+                &bt BT_NXT     &bt BT_CLR       &out OUT_TOG
+                &out OUT_USB   &out OUT_BLE     &to 0
+            >;
+        };
+    };
+};
+
